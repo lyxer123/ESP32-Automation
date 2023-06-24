@@ -16,9 +16,10 @@
 #define MAX_QUEUED_AUTOMATIONS 10
 // Repo info for updates
 #define REPO_PATH "https://raw.githubusercontent.com/RomeHein/ESPecial/master/versions/"
-#define NTP_SERVER "pool.ntp.org"
-#define gmtOffset_sec 3600
-#define daylightOffset_sec 3600
+
+#define NTP_SERVER "asia.pool.ntp.org"
+#define gmtOffset_sec 8*3600                       //東8區，增加8*3600秒
+#define daylightOffset_sec 0
 
 //------------------ PreferenceHandler
 #define PREFERENCES_NAME "esp32-api"

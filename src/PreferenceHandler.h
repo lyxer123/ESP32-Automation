@@ -153,6 +153,8 @@ private:
     bool detach(GpioFlash& gpio);
     int touchTempValues[GPIO_PIN_COUNT] = {};
     long lastTouchDebounceTimes[GPIO_PIN_COUNT] = {};
+
+    //刘永相修改
     int8_t cameraPinsConfig[5][16] = {
         {4,5,18,19,36,39,34,35,21,22,25,23,26,27,-1,-1}, 
         {34,13,14,35,39,38,37,36,4,25,5,27,18,23,-1,-1},

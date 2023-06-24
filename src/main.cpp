@@ -529,9 +529,10 @@ void setup(void)
       Serial.print("IP address: ");
       Serial.println(WiFi.localIP());
     #endif
+
+    delay(5000);
     //init and get the time
-    //configTime(gmtOffset_sec, daylightOffset_sec, NTP_SERVER);
-    setTime(2023,6,22,23,22,10,0);
+    configTime(gmtOffset_sec, daylightOffset_sec, NTP_SERVER);
     
     // Get local time
     struct tm timeinfo;
@@ -539,6 +540,9 @@ void setup(void)
       Serial.println(F("[SETUP] Failed to obtain time"));
     } else {
       // This avoid having to check getLocalTime in the loop, saving some complexity.
+      Serial.println(F("[SETUP] obtain time:"));
+      Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+
       debounceTimeDelay -= timeinfo.tm_sec; 
       lastCheckedTime = millis();
     }
